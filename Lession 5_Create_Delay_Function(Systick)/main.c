@@ -28,9 +28,9 @@ void delay_ms(volatile unsigned int time){
 }
 
 void EXTI0_IRQHandler(){
-	EXTI->PR |= 1;
+	EXTI->PR |= 1;//Clear state of pin
 	while (1) {
-				delay_ms(1000);
+			//	delay_ms(1000);
 			Toggle_Pin(Port_C, 13); // Toggle pin C13 - Blink led
 			delay_ms(1000);				
 	}

@@ -76,9 +76,9 @@ RCC->APB2ENR &= 0xfffffff0; //Reset register APB2ENR
 
 
 void Init_Delay() {
-	SysTick->CTRL &= 0;
-	SysTick->LOAD &= 0xffffff;
-	SysTick->VAL &= 0;
-	SysTick->CTRL |= 5;
+	SysTick->CTRL &= 0;//Reset state of port
+	SysTick->LOAD &= 0xffffff;//max value of timer counter
+	SysTick->VAL &= 0;// Set current value
+	SysTick->CTRL |= 5;//Set state of port
 }
 	

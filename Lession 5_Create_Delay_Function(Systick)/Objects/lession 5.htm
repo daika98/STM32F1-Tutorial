@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\lession 5.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\lession 5.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Mon Dec 28 13:46:25 2020
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Tue Jan 12 12:37:39 2021
 <BR><P>
 <H3>Maximum Stack Usage =         28 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -464,11 +464,11 @@ Global Symbols
 
 <P><STRONG><a name="[82]"></a>__semihosting_library_function</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, indicate_semi.o(.text), UNUSED)
 
-<P><STRONG><a name="[13]"></a>EXTI0_IRQHandler</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, main.o(i.EXTI0_IRQHandler))
+<P><STRONG><a name="[13]"></a>EXTI0_IRQHandler</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, main.o(i.EXTI0_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = EXTI0_IRQHandler &rArr; Toggle_Pin &rArr; Write_GPIO
 </UL>
-<BR>[Calls]<UL><LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Toggle_Pin
-<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
+<BR>[Calls]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Toggle_Pin
+<LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_md.o(RESET)
 </UL>
@@ -489,7 +489,7 @@ Global Symbols
 <P><STRONG><a name="[51]"></a>Read_GPIO</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, gpio_drive.o(i.Read_GPIO))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = Read_GPIO
 </UL>
-<BR>[Called By]<UL><LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Toggle_Pin
+<BR>[Called By]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Toggle_Pin
 </UL>
 
 <P><STRONG><a name="[38]"></a>SystemInit</STRONG> (Thumb, 78 bytes, Stack size 8 bytes, system_stm32f10x.o(i.SystemInit))
@@ -499,7 +499,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_md.o(.text)
 </UL>
-<P><STRONG><a name="[4e]"></a>Toggle_Pin</STRONG> (Thumb, 42 bytes, Stack size 12 bytes, gpio_drive.o(i.Toggle_Pin))
+<P><STRONG><a name="[4d]"></a>Toggle_Pin</STRONG> (Thumb, 42 bytes, Stack size 12 bytes, gpio_drive.o(i.Toggle_Pin))
 <BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = Toggle_Pin &rArr; Write_GPIO
 </UL>
 <BR>[Calls]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Write_GPIO
@@ -512,10 +512,10 @@ Global Symbols
 <P><STRONG><a name="[52]"></a>Write_GPIO</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, gpio_drive.o(i.Write_GPIO))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = Write_GPIO
 </UL>
-<BR>[Called By]<UL><LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Toggle_Pin
+<BR>[Called By]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Toggle_Pin
 </UL>
 
-<P><STRONG><a name="[4d]"></a>delay_ms</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, main.o(i.delay_ms))
+<P><STRONG><a name="[4e]"></a>delay_ms</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, main.o(i.delay_ms))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = delay_ms
 </UL>
 <BR>[Calls]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
@@ -525,17 +525,17 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[53]"></a>delay_us</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, main.o(i.delay_us))
-<BR><BR>[Called By]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
+<BR><BR>[Called By]<UL><LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
 </UL>
 
 <P><STRONG><a name="[45]"></a>main</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = main &rArr; Toggle_Pin &rArr; Write_GPIO
 </UL>
-<BR>[Calls]<UL><LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Toggle_Pin
+<BR>[Calls]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Toggle_Pin
 <LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_GPIO
 <LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_Delay
 <LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_AFIO_Port_A
-<LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
+<LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
 </UL>
 <BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>

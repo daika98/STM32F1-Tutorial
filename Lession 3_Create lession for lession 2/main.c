@@ -8,13 +8,18 @@ void delay ( unsigned int time);
 int  main(void) {
 	Init_GPIO(Port_A, 0, IN, IN_PP);
 	Init_GPIO(Port_C, 13, OUT_50, OUT_GP_PP);
+	Init_GPIO(Port_C, 14, OUT_50, OUT_GP_PP);
 	while (1) {
 		if (Read_GPIO(Port_A, 0) == 1) {
 			Toggle_Pin(Port_C, 13); // Toggle pin C13 - Blink led
 			delay(50);	
+   //   Write_GPIO(Port_A, 12, 1);  
+			Toggle_Pin(Port_C, 14); 
+			delay(50);	
 		}
 		else {
 			Write_GPIO(Port_C, 13, 0);   //Write pin C13 value 0 - Turn on led 
+			Write_GPIO(Port_C, 14, 0);  
 		}
 	}
 }

@@ -2,7 +2,7 @@
 #include "RTE_Components.h"             // Component selection
 #include "RTE_Device.h"                 // Keil::Device:Startup
 
-
+/*
 void delay ( unsigned int time);
 
 int  main(void) {
@@ -29,3 +29,35 @@ void delay ( unsigned int time){
 			}
 }
 
+*/
+#include "stm32f10x.h"                  // Device header
+//PC13
+//APB2
+//RCC->APB2ENR
+//GPIOx_CRH
+//GPIOx_ODR
+
+void delayMs(int delay);
+int main(void)
+{
+	RCC->APB2ENR |=0x10;   //Enable to port C
+		GPIOC->CRH &= 0xFF0FFFFF; // Reset pin 13
+	GPIOC->CRH |= 0x00300000; //Write pin 13 values 0011//11 is mode OUTPUT max speed 50 MHz ; 00 is mode General purpose push pull -> 
+//	GPIOC->CRH |=0x400000; //PC13 muc MODE 11
+	while(1)
+	{
+		GPIOC->ODR =0x2000;
+		delayMs(1000);
+		GPIOC->ODR &=~0x2000;
+		delayMs(1000);
+	}
+}
+
+void delayMs(int delay)
+{
+	int i;
+	for(;delay>0;delay--)
+	{
+		for(i=0;i<3195;i++);
+	}
+}
