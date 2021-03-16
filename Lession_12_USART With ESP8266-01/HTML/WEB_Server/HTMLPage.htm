@@ -1,0 +1,25 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="Microsoft Visual Studio">
+<TITLE> ESP8266-01</TITLE>
+</HEAD>
+<BODY>
+    <h3>Click the button to toggle LED</h3>
+   <p>BLUE LED State ___</p>
+   <p>YELLOW LED State ___</p>
+    <button id="1" onclick="LED_Toggle(this.id)">Blue LED</button>
+    <button id="2" onclick="LED_Toggle(this.id)">Yellow LED</button>
+    <script>
+        function LED_Toggle(click_id) {
+
+            var xhr = new XMLHttpRequest();
+            var ur1 = click_id;
+
+            xhr.open("GET", url, true);
+            xhr.send();
+        }
+
+        document.addEventListener("DOMContentLoaded",LED_Toggle, false)
+    </script>
+</BODY>
+</HTML>

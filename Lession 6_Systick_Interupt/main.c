@@ -5,17 +5,20 @@ void delay_us (void);
 void delay_ms (volatile unsigned int time);
 
 int  main(void) {
-	Init_GPIO(Port_C, 13, OUT_50, OUT_GP_PP);
-	Init_Delay();
-  //Init_Systick_Interrupt();
+	  Init_GPIO(Port_C, 13, OUT_50, OUT_GP_PP);
+	  
+		Write_GPIO(Port_C,13,0);
+   Init_Systick_Interrupt();
+	
 	while (1) {
-		delay_ms(1000);
-		Toggle_Pin(Port_C, 13);
-	}
+
 }
+	}
+
 
 void SysTick_Handler(void) {
-	Toggle_Pin(Port_C, 13);
+
+		Toggle_Pin(Port_C,13);
 }
 
 
@@ -30,6 +33,3 @@ void delay_ms(volatile unsigned int time){
 			delay_us(); 
 }
 }
-
-
-

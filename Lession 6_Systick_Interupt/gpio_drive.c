@@ -78,15 +78,15 @@ RCC->APB2ENR &= 0xfffffff0; //Reset register APB2ENR
 void Init_Delay() {
 	SysTick->CTRL &= 0;// Reset Control register
 	SysTick->LOAD &= 0xffffff; // Maximum value of Load_Register
-	SysTick->VAL &= 0;  // Current value
-	SysTick->CTRL |= 5; // Set state of control Register
+	SysTick->VAL  &= 0;  // Current value
+	SysTick->CTRL = 5; // Set state of control Register
 }
 	
 void Init_Systick_Interrupt(){
 	SysTick->CTRL &= 0 ; // Reset control register 
-  SysTick->LOAD &= 0xffffff ;
+  SysTick->LOAD &= 0xffffff;
 	SysTick->LOAD |= 7200000;
   SysTick->VAL 	|= 0;
-	SysTick->CTRL |= 7;
+	SysTick->CTRL = 7;
 }
 

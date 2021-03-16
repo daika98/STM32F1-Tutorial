@@ -6,7 +6,7 @@ void delay_ms (unsigned int time);
 
 int  main(void) {
 	Init_GPIO(Port_C, 13, OUT_50, OUT_GP_PP);
-	Init_AFIO_Port_A();
+//	Init_AFIO_Port_A();
 	Init_Delay();
 
 	while (1) {
